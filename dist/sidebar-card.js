@@ -18630,13 +18630,14 @@ function getRoot() {
 // return var(--header-height) from #view element
 // We need to take from the div#view element in case of "kiosk-mode" module installation that defined new CSS var(--header-height) as local new variable, not available in div#customSidebar
 function getHeaderHeightPx() {
-	let headerHeightPx = '0px';
+	let headerHeightPx = '50px';
 	const root = getRoot();
     const view = root.shadowRoot.getElementById('view');
 	//debugger;
 	if(view!==undefined && window.getComputedStyle(view)!==undefined) {
 		headerHeightPx = window.getComputedStyle(view).marginTop;
 	}
+	headerHeightPx = '50px';
     return headerHeightPx;
 }
 // Returns the Home Assistant Sidebar element
